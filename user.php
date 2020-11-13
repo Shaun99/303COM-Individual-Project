@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
             
             $row = $result->fetch_assoc();
 
-            //Successfully login
+            //Successfully Login
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['uName'] = $_POST['uName'];
             $_SESSION['pWord'] = $_POST['pWord'];

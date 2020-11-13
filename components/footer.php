@@ -17,7 +17,7 @@
                         <a href="index.html"><img src="img/core-img/logo.png" alt="" width="200px"></a>
                     </div>
                     <!-- Copywrite -->
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> The Cooking Corner All rights reserved |  <i class="fa fa-heart-o" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
