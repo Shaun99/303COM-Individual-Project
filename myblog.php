@@ -4,6 +4,8 @@
     
      if (empty($_GET['page']))
         $_GET['page'] = 1;
+     
+      if(isset($_SESSION['uName'])) {
 ?>
 
 <!DOCTYPE html>
@@ -268,3 +270,8 @@
     </body>
 </html>
 
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Login Users.")</script>';
+    } 
+?>

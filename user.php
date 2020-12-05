@@ -134,7 +134,7 @@ if(isset($_POST['submit'])){
             <div class="login-paragraph">
             <input type="checkbox" checked="checked" name="remember" />
             Remember me 
-            <a href="#" style="color: #ffbb00; padding-left:200px;"><i>Forgot Password?</i></a>
+
             </div>
             
         <br>

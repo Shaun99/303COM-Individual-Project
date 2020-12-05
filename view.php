@@ -4,6 +4,8 @@
      
     if (empty($_GET['page']))
     $_GET['page'] = 1;
+    
+    if(isset($_SESSION['uName']) && $_SESSION['uName'] == "Shaun") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -765,3 +767,8 @@
 </body>
 
 </html>
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Authorised Admin.")</script>';
+    } 
+?>

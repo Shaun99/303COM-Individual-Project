@@ -42,6 +42,8 @@
         }
         mysqli_close($dbc);
     }//End of form submission
+    
+    if(isset($_SESSION['uName'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -224,4 +226,8 @@
 </body>
 
 </html>
-
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Login Users.")</script>';
+    } 
+?>

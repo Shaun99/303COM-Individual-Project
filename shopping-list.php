@@ -1,6 +1,8 @@
 <?php 
     $thisPage = "Profile"; 
      session_start();
+     
+      if(isset($_SESSION['uName'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -199,3 +201,8 @@
 </body>
 
 </html>
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Login Users.")</script>';
+    } 
+?>

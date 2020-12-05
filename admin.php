@@ -7,12 +7,7 @@
 					
     $conn = mysqli_connect('localhost', 'root', '', 'cooking_corner');
     
-    //Code are implemented to prevent SQL injection
-    $uname = mysqli_real_escape_string($conn, $_POST['uName']);
-    $uname = htmlentities($uname, ENT_QUOTES, "UTF-8");
-    
-    $pwd = mysqli_real_escape_string($conn, $_POST['pWord']);
-    $pwd = htmlentities($pwd, ENT_QUOTES, "UTF-8");
+  
     
     
     $sql = "SELECT * FROM admin WHERE uname = '". $_POST['uName'] ."' AND pword = '". $_POST['pWord'] ."'";
@@ -129,7 +124,7 @@
             <div class="login-paragraph">
             <input type="checkbox" checked="checked" name="remember" />
             Remember me 
-            <a href="#" style="color: #ffbb00; padding-left:200px;"><i>Forgot Password?</i></a>
+
             </div>
             
         <br>

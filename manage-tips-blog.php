@@ -21,6 +21,7 @@
             }
         }
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,13 +33,9 @@
 </head>
 
 <body>
-   <?php 
-        if (isset($_SESSION["user_id"]) == false) {
-            include('components/nav-bar-general.php');
-        }
-        else if ($_SESSION["user_id"] == true) {
-            include('components/nav-bar-login.php');
-        }
+      <?php 
+      include'components/nav-bar-login.php';
+
     
  if($conn = mysqli_connect('localhost', 'root', '', 'cooking_corner')) {
     $sql = "SELECT * FROM tips_blog,user WHERE tips_blog.user_id = user.user_id AND tblog_id = ". $id .";";
@@ -489,5 +486,4 @@
 </body>
 
 </html>
-
 

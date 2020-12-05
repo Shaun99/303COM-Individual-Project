@@ -1,6 +1,8 @@
 <?php 
     $thisPage = "Registered Users"; 
     session_start();
+    
+    if(isset($_SESSION['uName']) && $_SESSION['uName'] == "Shaun") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -148,5 +150,9 @@
 
     <?php require_once './components/js-include-bottom.php'; ?>
 </body>
-
 </html>
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Authorised Admin.")</script>';
+    } 
+?>

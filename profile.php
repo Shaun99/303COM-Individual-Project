@@ -105,6 +105,8 @@
   
     mysqli_close($dbc);
     
+     if(isset($_SESSION['uName'])) {
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -453,3 +455,8 @@
     </script>          
 </body>
 </html>
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Login Users.")</script>';
+    } 
+?>

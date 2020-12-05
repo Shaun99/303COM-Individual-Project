@@ -109,6 +109,8 @@
     }
 
 mysqli_close($dbc);
+
+if(isset($_SESSION['uName']) && $_SESSION['uName'] == "Shaun") {
     
 ?>
 <!DOCTYPE html>
@@ -436,4 +438,8 @@ mysqli_close($dbc);
     </script>          
 </body>
 </html>
-
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Authorised Admin.")</script>';
+    } 
+?>

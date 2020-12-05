@@ -1,6 +1,8 @@
 <?php 
     $thisPage = "Profile"; 
      session_start();
+     
+     if(isset($_SESSION['uName'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +14,7 @@
 </head>
 
 <body>
-   <?php 
-        if (isset($_SESSION["user_id"]) == false) {
-            include('components/nav-bar-general.php');
-        }
-        else if ($_SESSION["user_id"] == true) {
-            include('components/nav-bar-login.php');
-        }
-    ?>
+   <?php include'components/nav-bar-login.php'; ?>
     
     <div class="col-lg-12 p-l-0 title-margin-left">
          <div class="page-header">   
@@ -249,4 +244,8 @@
 </body>
 
 </html>
-
+<?php } 
+else{ 
+        echo '<script>alert("Access Denied. Only for Login Users.")</script>';
+    } 
+?>

@@ -169,7 +169,11 @@
 
                                     }
                                 print' </b>    </div>
-                                     <p style="text-align:justify; color:darkslategray;">'.$row['desp1'].'</p>
+                                     <p style="text-align:justify; color:darkslategray;     overflow: hidden;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 4;
+                                        -webkit-box-orient: vertical;">
+                                        '.$row['desp1'].'</p>
                                      <a href="tips-blog-view.php?id='. $row['tblog_id'] .'" class="btn delicious-btn mt-30">
                                         Continue Reading <i class="fa fa-arrow-right"></i>
                                     </a>
