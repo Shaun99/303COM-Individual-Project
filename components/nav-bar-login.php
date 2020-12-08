@@ -115,6 +115,9 @@
                                                 <a href="about.php"><i class="fa fa-info-circle"></i>&nbsp; About Us</a>
                                             </li>
                                             <li>
+                                                <a href="recipes.php"><i class="fa fa-book"></i>&nbsp; All Recipes</a>
+                                            </li>
+                                            <li>
                                                 <a href="#"><i class="fa fa-clone"></i>&nbsp; Recipe Blog</a>
                                                  <ul class="dropdown">
                                                      <li>
@@ -139,9 +142,7 @@
                                             <li>
                                                 <a href="contact.php"><i class="fa fa-address-book"></i>&nbsp; Contact Us</a>
                                             </li>          
-                                            <li>
-                                                <a href="recipes.php"><i class="fa fa-book"></i>&nbsp; All Recipes</a>
-                                            </li>
+                                           
                                             <li><a href="#"><i class="fa fa-plus"></i>&nbsp; More</a>
                                                 <ul class="dropdown" style="height: 100px;">
                                                     <li>

@@ -131,7 +131,7 @@
          <div class="page-header">   
              <div class="breadcrumb">
                      <li class="breadcrumb-item"><a href="index.php">Home</a></li> 
-                     <li class="breadcrumb-item"><a href="blog-post.php">The Cooking Corner Blog</a></li>   
+                     <li class="breadcrumb-item"><a href="blog-post.php">Recipe Blog</a></li>   
                  <li class="breadcrumb-item active">'. $row['rblog_name'] .'</li>
              </div>
          </div>

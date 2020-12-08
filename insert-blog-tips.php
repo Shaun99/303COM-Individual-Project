@@ -19,8 +19,8 @@
         $name           = ($_POST['uname']);
         $cat            = ($_POST['cat']);
         $email          = ($_POST['email']);
-        $description1   = ($_POST['description1']);
-        $description2   = ($_POST['description2']);
+        $description1   = nl2br($_POST['description1']);
+        $description2   = nl2br($_POST['description2']);
         $rblog_image1   = ($_FILES['rblog_image1']['name']);
         $rblog_image2   = ($_FILES['rblog_image2']['name']);
       

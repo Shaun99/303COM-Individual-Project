@@ -1,4 +1,5 @@
 <?php 
+
     $thisPage = "Recipes"; 
     session_start();
      
@@ -86,8 +87,6 @@
             }
         }
     }
-   
-      
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -129,6 +128,23 @@
 
             if($result = mysqli_query($conn, $sql)) {
                 if($row = mysqli_fetch_assoc($result)) {
+                    
+                    $unmatchID = $row['recipe_id'];
+                    
+                    $curl = curl_init();
+                    curl_setopt($curl, CURLOPT_URL, "http://localhost:5000/?category=". $row['dish'] ."&serving=". $row['serving'] ."&difficulty=". $row['difficulty'] ."");
+                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                    $result = curl_exec($curl);
+
+                    $categoryId = json_decode($result)[0];
+                   
+                    if(!$result) {
+                        die("Connection Failure");
+                    }
+
+                    curl_close($curl);
+                    
                     print'
     <div class="col-lg-12 p-l-0 title-margin-left">
          <div class="page-header">   
@@ -521,11 +537,14 @@
     <hr>
     <?php
       if($conn = mysqli_connect('localhost', 'root', '', 'cooking_corner')) {
-            $sql = "SELECT * FROM recipe,admin WHERE recipe.admin_id = admin.admin_id AND recipe_id = ". $id ." LIMIT 1; ";
-
-            if($result = mysqli_query($conn, $sql)) {
-                if($row = mysqli_fetch_assoc($result)) {
-                    print'<div class="ft-recipe-blog" style="margin-left: 30px;"> 
+             // Do a select on the ID here
+                    $sql = "SELECT * FROM recipe WHERE dish = ". $categoryId ." AND recipe_id <> ". $unmatchID ." ORDER BY RAND() LIMIT 2;";
+                    
+                    if($result = mysqli_query($conn, $sql)) {
+                        echo '<div class="row">';
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            
+                              print'<div class="ft-recipe-blog col-sm-4" style="margin-left: 30px;"> 
      
     <div class="ft-recipe__content" >
      <img src="img/recipe-img/'.$row['re_image1'].'"><br/><br/>
@@ -538,9 +557,13 @@
     </div>
 
     </div>';
+                        }
+                        echo "</div>";
+                    }
+                  
                 }
-            }
-      }
+           
+      
                 
     
     ?>
